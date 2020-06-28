@@ -50,8 +50,9 @@ export default class UserDetails extends React.Component {
                     <div className="col">
                         <input type="text" className="form-control" name="last_name" placeholder="Last name" onChange={this.handleChange} value={this.state.fields.last_name || '' }/>
                     </div>
-                    <input type="submit" value="Submit" />
+                    
                 </div>
+                <input type="submit" id="btn-submit" value="Submit" />
             </form>
         )
     }

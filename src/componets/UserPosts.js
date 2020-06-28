@@ -14,9 +14,7 @@ export default class UserDetails extends React.Component {
     }
 
 
-    constructor(props) {
-        super(props);
-    }
+ 
 
     async componentDidMount() {
         const posts = await getUserPosts(this.props.user_id)
@@ -48,8 +46,8 @@ export default class UserDetails extends React.Component {
                     </div>
                     <button type="button" onClick={this.nextPost} className="btn btn-primary">More Post</button>
                 </div>
-            }
-                { this.state.posts[this.state.i] ? <PostComments post_id={this.state.posts[this.state.i].id} /> : <div>s</div> }
+                }
+                { this.state.posts[this.state.i] ? <PostComments post_id={this.state.posts[this.state.i].id} /> : <div></div> }
 
 
             </div>

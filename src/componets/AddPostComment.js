@@ -9,23 +9,24 @@ export default class AddPostComment extends React.Component {
     }
 
     componentWillReceiveProps(nextProps, nextContext) {
-        console.log("dsdsds", nextProps.post_id)
+       
         this.setState({post_id: nextProps.post_id})
 
-
     }
+
     addComment = () => {
-        console.log('add comment')
+        
 
         const comment = {
             name: 'name',
             email: 'test@test.pl',
             body: 'basdasdas',
-            post_id: this.state.post_id
+            post_id: this.state.post_id,
+           
         }
         savePostComment(comment)
         this.props.callbackFromAddComment(this.state.post_id)
-    }
+           }
 
 
     render() {

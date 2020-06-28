@@ -16,7 +16,6 @@ export default class SearchUser extends React.Component {
         },
     }
 
-
     async componentDidMount() {
          const res = await getUsers()
          this.setState({ persons: res });
@@ -33,7 +32,7 @@ export default class SearchUser extends React.Component {
     }
 
     userDetailsCallback (dataFromChild) {
-        console.log('emmit info', dataFromChild)
+        
         const res = getUsers()
         this.setState({ persons: res });
     }
@@ -64,6 +63,7 @@ export default class SearchUser extends React.Component {
                         </div>
                     </div>
                 </form>
+                                
                 <UserDetails
                     callbackFromUserDetails={this.userDetailsCallback}
                     id={id}
@@ -71,7 +71,7 @@ export default class SearchUser extends React.Component {
                     last_name={last_name}
                 />
 
-                { id ? <UserPosts user_id={ id }  /> : <div>nothing</div>}
+                { id ? <UserPosts user_id={ id }  /> : <div></div>}
             </div>
         )
     }
